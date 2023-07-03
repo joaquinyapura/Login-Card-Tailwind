@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+:root {
+  --primary: hsl(4, 100%, 67%);
+  --neutral: hsl(4, 100%, 67%);
+  --DarkSlateGrey: hsl(234, 29%, 20%);
+  --CharcoalGrey: hsl(235, 18%, 26%);
+}
+
+* {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  color: var(--DarkSlateGrey) !important;
+}
+
+button {
+  background-color: var(--DarkSlateGrey) !important;
+  color: white !important;
+}
+.image-list {
+  list-style-image: url("./assets/images/icon-list.svg");
+}
