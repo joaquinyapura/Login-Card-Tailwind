@@ -1,7 +1,13 @@
 import headerImage from "../assets/images/illustration-sign-up-mobile.svg";
 import headerImageLg from "../assets/images/illustration-sign-up-desktop.svg";
+import { Useform } from "../CustomHooks/Useform";
 
 export const Card = () => {
+  const { formState, handlestate, onResetForm } = Useform({
+    email: "",
+  });
+  const { email } = formState;
+
   return (
     <>
       <div className="lg:p-5 bg-gray-500 min-h-screen lg:flex lg:justify-center lg:items-center">
@@ -30,14 +36,21 @@ export const Card = () => {
               </li>
               <li className="px-2">And much more!</li>
             </ul>
-            <form className="w-full mt-10">
+            <form className="w-full mt-10" onSubmit={onResetForm}>
               <p className="font-bold text-sm ">Email adress</p>
               <input
+                id="inputForm"
+                name="email"
                 type="email"
                 placeholder="email@gompany.com"
                 className="p-5 w-full rounded-xl border-slate-200 border-2 lg:p-4"
+                onChange={handlestate}
+                value={email}
               />
-              <button className="text-center bg-blue-950 p-5 mt-5 rounded-xl w-full text-white lg:p-4 lg:py-5">
+              <button
+                className="text-center bg-blue-950 p-5 mt-5 rounded-xl w-full text-white lg:p-4 lg:py-5"
+                type="submit"
+              >
                 Subscribe to monthly newsletter
               </button>
             </form>
